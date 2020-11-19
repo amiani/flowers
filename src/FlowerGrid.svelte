@@ -4,6 +4,7 @@
 
   export let flowers: Array<Genome>
 
+  let generation = 0
   let selected: Genome;
   const selectFlower = genome => {
     if (selected) {
@@ -14,6 +15,7 @@
         console.log('parent2: ', genome)
         flowers = selected.cross(genome, 4)
         selected = undefined
+        generation++
       }
     } else {
       selected = genome
@@ -21,12 +23,16 @@
   }
 </script>
 
-<div class='flower-grid'>
-  {#each flowers as genome (genome.id)}
-    <Flower
-      {genome}
-      on:click={() => selectFlower(genome)}/>
-  {/each}
+<div class='container'>
+  <h1>Flowers!</h1>
+  <p>Click on two flowers to crossbreed them. Generation {generation}</p>
+  <div class='flower-grid'>
+    {#each flowers as genome (genome.id)}
+      <Flower
+        {genome}
+        on:click={() => selectFlower(genome)}/>
+    {/each}
+  </div>
 </div>
 
 <style>

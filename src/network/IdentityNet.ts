@@ -53,7 +53,7 @@ genes[7] = {
 
 genes[8] = {
   id: 8,
-  activation: sigmoid,
+  activation: sine,
   isOutput: true,
   distance: 1,
 }
@@ -81,7 +81,7 @@ const connections: Array<Connection> = [
     id: 4,
     from: 4,
     to: 8,
-    weight: Math.random() - .5
+    weight: (Math.random() - .5) / 2
   },
 ]
 

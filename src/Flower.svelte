@@ -53,6 +53,6 @@
     border-color: dodgerblue;
   }
   .selected {
-    border-color: firebrick;
+    border-color: fuchsia;
   }
 </style>
