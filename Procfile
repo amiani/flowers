@@ -1,1 +1,1 @@
-web: yarn build && yarn start --host
+web: yarn build && yarn start --host --port 80
